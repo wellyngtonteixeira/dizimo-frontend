@@ -1,0 +1,105 @@
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: var(--box-shadow);
+    margin: 10px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.name_tab{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--black);
+    flex: 2;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.registerNumber_tab{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--black);
+    flex: 1;
+}
+
+.comunity_tab{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--black);
+    flex: 1;
+}
+
+.decimist{
+    display: flex;
+    align-items: center;
+    height: 70px;
+    margin: 5px 10px;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.1s ease;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.decimist:hover{
+    scale: 1.01;
+}
+
+.registration_container {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.registration_decimist{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.name_container{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    object-fit: contain;
+}
+
+.name_decimist{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.phone_container {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.phone_decimist{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.comunity_decimist{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.comunity_container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comunity_name{
+    font-size: 16px;
+    font-weight: 400;
+}
