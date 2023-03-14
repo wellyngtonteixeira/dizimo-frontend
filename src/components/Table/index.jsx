@@ -7,6 +7,7 @@ const Table = ({ decimists }) => {
                 <p className={styles.registerNumber_tab}>Nº</p>
                 <p className={styles.name_tab}>Nome Completo</p>
                 <p className={styles.registerNumber_tab}>Telefone</p>
+                <p>Comunidade</p>
             </div>
             {decimists.map((decimist) => (
                 <div className={styles.decimist} key={decimist.id}>
@@ -23,6 +24,11 @@ const Table = ({ decimists }) => {
                     <div className={styles.phone_container}>
                         <p className={styles.phone_decimist}>
                             {decimist.phone_number}
+                        </p>
+                    </div>
+                    <div className={styles.phone_container}>
+                        <p className={styles.phone_decimist}>
+                            {decimist.comunity}
                         </p>
                     </div>
                     

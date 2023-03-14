@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 import Search from '../../components/Search';
 import Table from '../../components/Table';
+import Pagination from '../../components/Pagination';
+import Sort from '../../components/Sort';
 export default function ListDecimists() {
 
   const base_url = "http://localhost:8000/decimists";
@@ -15,7 +17,7 @@ export default function ListDecimists() {
   useEffect(() => {
     const getAll = async () =>{
       try{
-        const url = `${base_url}?page=${page}&sort=${sort.sort},${sort.order}&search=${search}`;
+        const url = `${base_url}?page=${page}&ordering=${sort.sort},${sort.order}&search=${search}`;
         const { data } = await axios.get(url);
         setObj(data);
         console.log(data);
@@ -31,17 +33,20 @@ export default function ListDecimists() {
   return (
     
     <div className='wrapper'>
-      <div className='container'>
-        <div className='head'>
-          <Search setSearch={(search) => setSearch(search)}/>
-        </div>
-        <div className='body'>
-          <div className='table_container'>
-            <Table decimists={obj.results ? obj.results:[]}/>
-          </div>
-          <div className='filter_container'></div>
-        </div>
+      <Search setSearch={(search) => setSearch(search)}/>
+      <div className='filter_container'>
+        <Sort sort={sort} setSort={(sort) => setSort(sort)} />
       </div>
+      <div className='table_container'>
+            <Table decimists={obj.results ? obj.results:[]}/>
+            <Pagination 
+              page={page}
+              limit={5}
+              total={obj.count ? obj.count:0}
+              setPage={(page)=> setPage(page)}
+            />
+      </div>
+      
     </div>
 
 
