@@ -1,6 +1,6 @@
 import styles from "./styles.module.css"
 
-const Table = ({ decimists }) => {
+const Table = ({ decimists, comunities }) => {
     return (
         <div className={styles.container}>
             <div className={styles.heading}>
@@ -27,9 +27,12 @@ const Table = ({ decimists }) => {
                         </p>
                     </div>
                     <div className={styles.phone_container}>
-                        <p className={styles.phone_decimist}>
-                            {decimist.comunity}
-                        </p>
+                        {comunities.map((comunity) => (
+                            <p className={styles.phone_decimist} key={decimist.comunity}>
+                                {comunity.name}
+                            </p>
+                        ))}
+                        
                     </div>
                     
                 </div>
